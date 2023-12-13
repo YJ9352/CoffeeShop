@@ -1,24 +1,14 @@
 package coffeeshop
 
-import coffeeshop.menu.Price
-
+import coffeeshop.menu.PickList
 
 class CashDesk {
-    fun orderList() {
-        val cartList = arrayListOf<Cart>()
-        val priceList = arrayListOf<Price>()
-
-//        for (i in 0 .. cartList.size) {
-//            val item = cartList[i]
-//
-//            println("${item.cusNumber}/ ${item.cash} / ${item.Price}")
-//        }
-
-        for (i in 0 .. priceList.size) {
-            val item = priceList[i]
-
-            println("${item.menuName}/ ${item.menuPrice} / ${item.menuQuantity}")
+    fun orderList(pickList: List<PickList>) { //받아주기
+        val sortedArray = pickList.sortedBy { item -> item.menuName }
+        for (i in sortedArray.indices) {
+            val item = sortedArray[i]
+            println("${i + 1} / ${item.menuName} / ${item.menuPrice} / ${item.menuQuantity} / ")
         }
-
     }
+
 }

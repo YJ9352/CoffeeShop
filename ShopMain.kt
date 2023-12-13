@@ -1,8 +1,5 @@
 package coffeeshop
 
-import coffeeshop.menu.Coffee
-import coffeeshop.menu.Price
-
 // 숫자 외 입력시 오류처리
 fun String.isNumeric(): Boolean {
     return try {
